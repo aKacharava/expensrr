@@ -1,0 +1,29 @@
+# React JS (Frontend) 
+/frontend/node_modules
+/frontend/.env
+/frontend/build
+/frontend/.pnp
+/frontend/.pnp.js
+
+# Python (Backend)
+/backend/venv
+/backend/__pycache__/
+/backend/*.pyc
+/backend/*.pyo
+/backend/.env
+
+# System files
+.DS_Store         # macOS
+Thumbs.db          # Windows
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+
+# Environment variables
+.env               # (if you have environment files for local setup)
