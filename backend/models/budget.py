@@ -1,4 +1,4 @@
-from app import db
+from db import db  # Import db from db.py
 
 class Budget(db.Model):
     id = db.Column(db.Integer, primary_key=True)

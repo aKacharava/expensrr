@@ -1,12 +1,13 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
 from config import Config
-from models.budget import Budget
+from db import db  # Import db from db.py
 from routes.budget_routes import budget_bp
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db = SQLAlchemy(app)
+
+# Bind db to app
+db.init_app(app)
 
 # Register Blueprints
 app.register_blueprint(budget_bp)
