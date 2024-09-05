@@ -1,3 +1,6 @@
+#Instance
+/instance
+
 # React JS (Frontend) 
 /frontend/node_modules
 /frontend/.env
