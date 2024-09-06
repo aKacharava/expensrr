@@ -1,4 +1,4 @@
-```md
+
 ## Features
 
 - Add, edit, and delete budget categories.
@@ -149,4 +149,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 ## Contributing
 
 Contributions are welcome! Feel free to submit a pull request or open an issue if you encounter any bugs or have feature requests.
-```
