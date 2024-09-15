@@ -6,12 +6,9 @@ export default function Budgets({ budgets }: BudgetsProps) {
   return (
     <ul className="flex flex-col gap-4 my-2">
       {budgets.map((budget: BudgetsData) => {
-        console.log("Budget individual", budget);
-
         return (
-          <li className="w-1/2 mx-auto">
+          <li className="w-1/2 mx-auto" key={budget.id}>
             <Budget
-              key={budget.id}
               title={budget.category}
               date={budget.date}
               description={budget.description}
