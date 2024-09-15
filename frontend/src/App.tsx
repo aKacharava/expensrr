@@ -1,14 +1,15 @@
 import Budgets from "./components/Budgets/Budgets";
 import Page from "./components/UI/Page/Page";
-import axios from "axios"
-import { BudgetData } from "./interfaces/budgetData";
+import axios from "axios";
+import { BudgetsData } from "./types/budgets";
 import { useState, useEffect } from "react";
+import { BudgetTypes } from "../enums/budgetTypes";
 
 export default function App() {
-  const [income, setIncome] = useState<BudgetData[]>([]);
+  const [income, setIncome] = useState<BudgetsData[]>([]);
   const [error, setError] = useState(null);
-  
-  const filterType = 'Income';
+
+  const filterType = BudgetTypes.Income;
 
   useEffect(() => {
     const fetchIncome = async () => {
@@ -28,8 +29,6 @@ export default function App() {
   if (error) {
     return <div>Error: {error}</div>;
   }
-
-  console.log("Income", income)
 
   return (
     <Page title="Income">
