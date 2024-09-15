@@ -1,7 +1,7 @@
 import Card from "../../UI/Card/Card";
-import { BudgetProps } from "../../../interfaces/budgetProps";
+import { BudgetData } from "../../../interfaces/budgetData";
 
-export default function Budget({ title, date, description, amount }: BudgetProps) {
+export default function Budget({ title, date, description, amount }: BudgetData) {
   return (
     <Card className="bg-green-500">
       <div className="flex justify-between">

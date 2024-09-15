@@ -1,7 +1,7 @@
+import { BudgetData } from "../../interfaces/budgetData";
 import Budget from "./Budget/Budget";
 
-
-export default function Budgets() {
+export default function Budgets({ budgets }: BudgetData[]) {
   return (
     <ul className="flex flex-col gap-4 my-2">
       <li className="w-1/2 mx-auto">
