@@ -6,7 +6,11 @@ budget_bp = Blueprint('budget', __name__)
 
 @budget_bp.route('/budgets', methods=['GET'])
 def get_budgets():
-    budgets = Budget.query.all()
+    budget_type = request.args.get('type')  # Get the type from query parameters
+    if budget_type:
+        budgets = Budget.query.filter_by(type=budget_type).all()  # Filter by type
+    else:
+        budgets = Budget.query.all()
     return jsonify([budget.to_dict() for budget in budgets])
 
 @budget_bp.route('/budgets', methods=['POST'])

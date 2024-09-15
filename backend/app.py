@@ -2,9 +2,11 @@ from flask import Flask
 from config import Config
 from db import db  # Import db from db.py
 from routes.budget_routes import budget_bp
+from flask_cors import CORS
 
 app = Flask(__name__)
 app.config.from_object(Config)
+CORS(app)  # Enable CORS for all routes
 
 # Bind db to app
 db.init_app(app)
