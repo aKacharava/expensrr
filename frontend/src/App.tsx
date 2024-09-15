@@ -7,7 +7,7 @@ import { BudgetTypes } from "../enums/budgetTypes";
 
 export default function App() {
   const [income, setIncome] = useState<BudgetsData[]>([]);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string>('');
 
   const filterType = BudgetTypes.Income;
 
@@ -18,8 +18,17 @@ export default function App() {
           params: { type: filterType },
         });
         setIncome(response.data);
-      } catch (error) {
-        setError(error.message);
+      } catch (error: unknown) {
+         if (axios.isAxiosError(error)) {
+           // Axios error
+           setError(error.message);
+         } else if (error instanceof Error) {
+           // General JavaScript error
+           setError(error.message);
+         } else {
+           // Unknown error
+           setError("An unknown error occurred");
+         }
       }
     };
 
