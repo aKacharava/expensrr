@@ -13,7 +13,7 @@ export default function App() {
   useEffect(() => {
     const fetchIncome = async () => {
       try {
-        const response = axios.get("/budgets", {
+        const response = await axios.get("http://127.0.0.1:5000/budgets", {
           params: { type: filterType },
         });
         setIncome(response.data);
