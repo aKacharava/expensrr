@@ -1,12 +1,10 @@
-function App() {
-  return (
-    <>
-      <h1>Income</h1>
-      <ul>
-        <li>Some income</li>
-      </ul>
-    </>
-  )
-}
+import Budgets from "./components/Budgets/Budgets";
+import Page from "./components/UI/Page/Page";
 
-export default App
+export default function App() {
+  return (
+    <Page title="Income">
+      <Budgets />
+    </Page>
+  );
+}
