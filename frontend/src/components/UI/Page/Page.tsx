@@ -8,9 +8,17 @@ export default function Page({
   children: React.ReactNode;
 }) {
   return (
-    <div className="w-2/3 mx-auto">
+    <div className="mx-auto flex flex-col items-center">
       <h1 className="text-center text-3xl">{title}</h1>
       {props.children}
+      <nav>
+        <menu className="flex gap-4">
+          <li>home</li>
+          <li>income</li>
+          <li>expense</li>
+          <li>settings</li>
+        </menu>
+      </nav>
     </div>
   );
 }

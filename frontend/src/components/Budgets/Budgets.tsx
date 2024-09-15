@@ -4,7 +4,7 @@ import Budget from "./Budget/Budget";
 
 export default function Budgets({ budgets }: BudgetsProps) {
   return (
-    <ul className="flex flex-col gap-4 my-2">
+    <ul className="flex flex-col gap-4 my-2 w-full">
       {budgets.map((budget: BudgetsData) => {
         return (
           <li className="w-1/2 mx-auto" key={budget.id}>
