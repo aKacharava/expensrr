@@ -12,7 +12,17 @@ def get_budgets():
 @budget_bp.route('/budgets', methods=['POST'])
 def add_budget():
     data = request.get_json()
-    new_budget = Budget(amount=data['amount'], category=data['category'], date=data['date'])
+    new_budget = Budget(type=data['type'], date=data['date'], amount=data['amount'], description=data['description'], category=data['category'])
     db.session.add(new_budget)
     db.session.commit()
     return jsonify(new_budget.to_dict()), 201
+
+@budget_bp.route('/budgets/clear', methods=['DELETE'])
+def clear_budgets():
+    try:
+        num_rows_deleted = db.session.query(Budget).delete()  # Delete all rows
+        db.session.commit()  # Commit the changes
+        return jsonify({"message": f"Deleted {num_rows_deleted} budgets."}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({"error": str(e)}), 500
